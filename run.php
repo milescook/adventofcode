@@ -1,8 +1,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-use NumberCalculator;
-use Repository\INumberlistRepository;
+
 use Repository\NumberlistRepositoryJSON;
 
 
