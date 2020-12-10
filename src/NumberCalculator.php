@@ -36,4 +36,31 @@ class NumberCalculator
 
         return $numbersMatching;
     }
+
+    /**
+     * @param int $testNumber Number to test against, 
+     * if it combined with numbers in the list add up to the target
+     * @return array<int> The number matched to make the target
+     */
+    public function getThreeSumCombination() : array
+    {
+        $numbersMatching = [];
+        
+        foreach($this->NumberlistRepository->getNumbers() as $firstNumber)
+        {
+            foreach($this->NumberlistRepository->getNumbers() as $secondNumber)
+            {
+                foreach($this->NumberlistRepository->getNumbers() as $thirdNumber)
+                {
+                    if(($firstNumber + $secondNumber + $thirdNumber) == $this->target)
+                    {
+                        $numbersMatching = [$firstNumber,$secondNumber,$thirdNumber];
+                        return $numbersMatching;
+                    }
+                }
+            }
+        }
+
+        return [];
+    }
 }
